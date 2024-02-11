@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mia.Plugin", "Mia.Plugin\Mia.Plugin.csproj", "{93D88B95-4C51-4FEE-A380-BE532B965C34}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mia.JellyfinPlugin", "Mia.JellyfinPlugin\Mia.JellyfinPlugin.csproj", "{93D88B95-4C51-4FEE-A380-BE532B965C34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
