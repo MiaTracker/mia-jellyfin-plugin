@@ -4,11 +4,12 @@ using MediaBrowser.Controller.Library;
 using MediaBrowser.Controller.Plugins;
 using MediaBrowser.Model.Entities;
 using Mia.Plugin.Api;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace Mia.Plugin;
 
-public class Setup : IServerEntryPoint
+public class Setup : IHostedService, IDisposable
 {
     private ILibraryManager _libraryManager;
     private ILogger<Setup> _logger;
@@ -22,12 +23,17 @@ public class Setup : IServerEntryPoint
     }
 
 
-    public Task RunAsync()
+    public Task StartAsync(CancellationToken token)
     {
         _libraryManager.ItemAdded += OnItemAdded;
         _libraryManager.ItemUpdated += OnItemUpdated;
         _libraryManager.ItemRemoved += OnItemRemoved;
 
+        return Task.CompletedTask;
+    }
+
+    public Task StopAsync(CancellationToken token)
+    {
         return Task.CompletedTask;
     }
 
